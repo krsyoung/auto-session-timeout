@@ -53,4 +53,6 @@ module AutoSessionTimeout
   
 end
 
-ActionController::Base.send :include, AutoSessionTimeout
+ActiveSupport.on_load(:action_controller) do
+  ActionController::Base.send :include, AutoSessionTimeout
+end
